@@ -1,0 +1,18 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: open sans, Helvetica, Arial, sans-serif;
+}
+
+button {
+    outline: none;
+}
+
+.ant-menu-item a {
+    transition: none;
+}
+
+.demo-logo-vertical h2 {
+    text-align: center;
+}

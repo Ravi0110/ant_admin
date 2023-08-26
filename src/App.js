@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom'
+import PageLayout from './Layout'
+import { ConfigProvider, theme } from 'antd'
+
+const { defaultAlgorithm, darkAlgorithm } = theme
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ConfigProvider
+      theme={{
+        components:{
+          Menu:{
+            itemSelectedBg: '#1890ff',
+            itemSelectedColor: 'inherit',
+            fontSize: 18
+          },
+        },
+        algorithm: false ? darkAlgorithm : defaultAlgorithm
+      }}
+    >
+      <BrowserRouter>
+        <PageLayout />
+      </BrowserRouter>
+    </ConfigProvider>
+  )
 }
 
-export default App;
+export default App
