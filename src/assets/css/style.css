@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* common css */
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: open sans, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 button {
@@ -13,6 +16,18 @@ button {
     transition: none;
 }
 
+/* nav logo */
 .demo-logo-vertical h2 {
     text-align: center;
+}
+
+/* dashboard */
+.imgBox{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 20px;
 }

@@ -1,5 +1,6 @@
-import { Divider, Layout, Menu, Typography } from 'antd'
+import { Layout, Menu, Typography } from 'antd'
 import {
+  HomeFilled,
   DesktopOutlined,
   PieChartOutlined,
   UserOutlined
@@ -31,9 +32,9 @@ const SideBar = ({ themeToken, collapsed }) => {
   const SIDEBARMENU = [
     {
       key: '1',
-      icon: <UserOutlined />,
-      label: 'nav 1',
-      link: '/nav'
+      icon: <HomeFilled />,
+      label: 'Dashboard',
+      link: '/dashboard'
     },
     {
       key: '2',
@@ -94,16 +95,15 @@ const SideBar = ({ themeToken, collapsed }) => {
       collapsible
       collapsed={collapsed}
       width={270}
-      style={{ backgroundColor: themeToken?.colorBgContainer }}
+      style={{ backgroundColor: themeToken?.colorBgContainer, borderRight: `1px solid ${themeToken?.colorBorder}` }}
     >
       <div className="demo-logo-vertical">
         <Typography.Title level={2}>Logo</Typography.Title>
       </div>
-      <Divider />
       <Menu
         defaultSelectedKeys={['1']}
         mode="inline"
-        style={{ padding: '0 10px', border: 0 }}
+        style={{ padding: '0 10px', border: 0}}
       >
         {generateMenuItems(SIDEBARMENU)}
       </Menu>
