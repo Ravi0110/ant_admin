@@ -27,9 +27,14 @@ function App() {
             borderRadiusLG: 20
           },
           Typography:{
+            colorLink: '#0010f7',
             colorTextSecondary: '#dfe6e9',
             titleMarginBottom: 10,
             titleMarginTop: 10
+          },
+          Dropdown:{
+            controlItemBgHover: '#0010f777',
+            colorPrimaryTextHover: '#fff'
           }
         },
         token:{
@@ -41,6 +46,7 @@ function App() {
           colorPrimary: '#0010f7',
           colorPrimaryBg: '#0010f7',
           colorPrimaryBgHover: 'rgba(0, 16, 247, 0.4)',
+          colorError: '#d4380d'
         },
         algorithm: isDark ? darkAlgorithm : defaultAlgorithm
       }}
