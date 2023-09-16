@@ -1,4 +1,5 @@
 import { lazy } from 'react'
+import NotFound from '../pages/NotFound'
 const Dashboard = lazy(() => import('../pages/Dashboard'))
 const Tables = lazy(() => import('../pages/Tables'))
 const Forms = lazy(() => import('../pages/Forms'))
@@ -6,21 +7,32 @@ const Alert = lazy(() => import('../pages/components/Alert'))
 const Drawer = lazy(() => import('../pages/components/Drawer'))
 const Message = lazy(() => import('../pages/components/Message'))
 const Modal = lazy(() => import('../pages/components/Model'))
+const Login = lazy(() => import('../pages/Auth/Login'))
+const SignUp = lazy(() => import('../pages/Auth/Signup'))
+const Profile = lazy(() => import('../pages/User/Profile'))
 
 // ** Default Route
-const DefaultRoute = '/dashboard'
+const DefaultRoute = '/login'
 
 // ** Routes
 const PageRoutes = [
   {
-    path: '/login',
+    path: '/',
     layout: 'BlankLayout',
-    authRoute: true
+    authRoute: true,
+    component: <Login />
   },
   {
-    path: '/register',
+    path: '/login',
     layout: 'BlankLayout',
-    authRoute: true
+    authRoute: true,
+    component: <Login />
+  },
+  {
+    path: '/sign-up',
+    layout: 'BlankLayout',
+    authRoute: true,
+    component: <SignUp />
   },
   {
     path: '/forgot-password',
@@ -54,6 +66,15 @@ const PageRoutes = [
   {
     path: '/modal',
     component: <Modal />
+  },
+  {
+    path: '/profile',
+    component: <Profile />
+  },
+  {
+    path: '/*',
+    layout: 'BlankLayout',
+    component: <NotFound /> 
   }
 ]
 

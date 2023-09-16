@@ -1,13 +1,14 @@
 import { BrowserRouter } from 'react-router-dom'
 import PageLayout from './Layout'
 import { ConfigProvider, theme } from 'antd'
-import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const { defaultAlgorithm, darkAlgorithm } = theme
 
 function App() {
+  
+  const {isDark} = useSelector(state => state?.theme)
 
-  const [isDark, setisDark] = useState(false)
   return (
     <ConfigProvider
       theme={{
@@ -32,9 +33,8 @@ function App() {
             titleMarginBottom: 10,
             titleMarginTop: 10
           },
-          Dropdown:{
-            controlItemBgHover: '#0010f777',
-            colorPrimaryTextHover: '#fff'
+          Input:{
+            colorBorder: '#c5c5c5'
           }
         },
         token:{

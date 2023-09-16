@@ -1,12 +1,8 @@
-import { Layout, Menu, Typography } from 'antd'
-import {
-  HomeFilled,
-  ProfileFilled,
-  DatabaseFilled,
-  FolderOpenFilled
-} from '@ant-design/icons'
+import { Layout, Menu } from 'antd'
 import { NavLink } from 'react-router-dom'
-import { FaCircle } from 'react-icons/fa'
+import {FiHome, FiGrid, FiFileText, FiFolder, FiCircle} from 'react-icons/fi'
+import LogoBig from '../assets/images/dashboard_logo_full.png'
+import LogoSmall from '../assets/images/dashboard_logo_small.png'
 
 const { Sider } = Layout
 
@@ -31,48 +27,48 @@ const SideBar = ({ themeToken, collapsed }) => {
   const SIDEBARMENU = [
     {
       key: '1',
-      icon: <HomeFilled />,
+      icon: <FiHome />,
       label: 'Dashboard',
       link: '/dashboard'
     },
     {
       key: '2',
-      icon: <DatabaseFilled />,
+      icon: <FiGrid />,
       label: 'Tables',
       link: '/tables'
     },
     {
       key: '3',
-      icon: <ProfileFilled />,
+      icon: <FiFileText />,
       label: 'Forms',
       link: '/forms'
     },
     {
       key: '4',
-      icon: <FolderOpenFilled />,
+      icon: <FiFolder />,
       label: 'Components',
       children: [
         {
           key: '2.1',
-          icon: <FaCircle size={10}/>,
+          icon: <FiCircle size={10}/>,
           label: 'Alert',
           link: '/alert'
         },
         {
           key: '2.2',
-          icon: <FaCircle size={10}/>,
+          icon: <FiCircle size={10}/>,
           label: 'Drawer',
           link: '/drawer'
         },
         {
           key: '2.3',
-          icon: <FaCircle size={10}/>,
+          icon: <FiCircle size={10}/>,
           label: 'Message',
           link: '/message'
         },
         {
           key: '2.4',
-          icon: <FaCircle size={10}/>,
+          icon: <FiCircle size={10}/>,
           label: 'Modal',
           link: '/modal'
         }
@@ -92,7 +88,7 @@ const SideBar = ({ themeToken, collapsed }) => {
       }}
     >
       <div className="demo-logo-vertical">
-        <Typography.Title level={2}>Logo</Typography.Title>
+        <img alt="logo" src={collapsed ? LogoSmall : LogoBig } width={collapsed ? 50 : 250} style={{margin: 10}}/>
       </div>
       <Menu
         defaultSelectedKeys={['1']}

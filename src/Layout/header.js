@@ -1,39 +1,68 @@
-import { Button, Layout, Dropdown, Typography, List } from 'antd'
+import { Button, Layout, Dropdown, Typography, Divider, Row } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
-import { FaRegBell } from 'react-icons/fa'
+import {
+  FiBell,
+  FiUserCheck,
+  FiSettings,
+  FiLogOut,
+  FiSun,
+  FiMoon
+} from 'react-icons/fi'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { handleThemeChange } from '../redux/actions/themeAction'
 const { Header } = Layout
+const { Title } = Typography
 
-const data = [
+const items = [
   {
-    title: "New message from Sophie",
-    description: <> 2 days ago</>,
+    key: '1',
+    type: 'group',
+    label: (
+      <>
+        <Title level={4} style={{ marginTop: 5 }}>
+          Profile Settings
+        </Title>
+        <Divider style={{ margin: 5 }} />
+      </>
+    )
   },
   {
-    title: "New album by Travis Scott",
-    description: <> 2 days ago</>,
+    key: '2',
+    label: (
+      <Link to="/profile">
+        <Row align={'middle'}>
+          <FiUserCheck size={20} style={{ marginRight: 10 }} /> View Profile
+        </Row>
+      </Link>
+    )
   },
   {
-    title: "Payment completed",
-    description: <> 2 days ago</>,
+    key: '3',
+    label: (
+      <Link to="/profile">
+        <Row align={'middle'}>
+          <FiSettings size={20} style={{ marginRight: 10 }} /> Account Setting
+        </Row>
+      </Link>
+    )
   },
-];
-
-const menu = (
-  <List
-    min-width="100%"
-    style={{background: '#fff'}}
-    className="header-profile-dropdown"
-    itemLayout="horizontal"
-    dataSource={data}
-    renderItem={(item) => (
-      <List.Item>
-        <p>dshghsd</p>
-      </List.Item>
-    )}
-  />
-);
+  {
+    key: '4',
+    label: (
+      <Link to="/login">
+        <Row align={'middle'}>
+          <FiLogOut size={20} style={{ marginRight: 10 }} />
+          Log Out
+        </Row>
+      </Link>
+    )
+  }
+]
 
 const PageHeader = ({ themeToken, setCollapsed, collapsed }) => {
+  const dispatch = useDispatch()
+  const { isDark } = useSelector((state) => state?.theme)
   return (
     <Header
       style={{
@@ -51,8 +80,26 @@ const PageHeader = ({ themeToken, setCollapsed, collapsed }) => {
         onClick={() => setCollapsed(!collapsed)}
       />
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <FaRegBell size={20} style={{ marginRight: 18 }} />
-        <Dropdown overlay={menu} placement="bottomRight">
+        {isDark ? (
+          <FiMoon
+            size={20}
+            style={{ marginRight: 18, cursor: 'pointer' }}
+            onClick={() => dispatch(handleThemeChange())}
+          />
+        ) : (
+          <FiSun
+            size={20}
+            style={{ marginRight: 18, cursor: 'pointer' }}
+            onClick={() => dispatch(handleThemeChange())}
+          />
+        )}
+        <FiBell size={20} style={{ marginRight: 18 }} />
+        <Dropdown
+          menu={{
+            items
+          }}
+          overlayStyle={{ width: 250 }}
+        >
           <img
             alt="profile"
             width={40}

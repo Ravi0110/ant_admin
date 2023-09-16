@@ -6,7 +6,7 @@ const Router = () => {
   return (
     <Routes>
       {PageRoutes.map((route) => (
-        <Route path={route?.path} element={<Suspense fallback={<h1>Loading</h1>}>{route?.component}</Suspense>} />
+        <Route key={route?.path} path={route?.path} element={<Suspense fallback={<h1>Loading</h1>}>{route?.component}</Suspense>} />
       ))}
     </Routes>
   )

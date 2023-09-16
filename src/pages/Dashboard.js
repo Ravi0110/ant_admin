@@ -1,13 +1,5 @@
 import { Card, Col, Row, Typography, theme } from 'antd'
-import {
-  FaLevelUpAlt,
-  FaUserAlt,
-  FaLevelDownAlt,
-  FaDollarSign,
-  FaSortAmountUp,
-  FaSortAmountDown,
-  FaSignal
-} from 'react-icons/fa'
+import {FiTrendingUp, FiTrendingDown, FiDollarSign, FiBarChart, FiUser} from 'react-icons/fi'
 import LineChart from '../components/charts/LineChart'
 
 const Dashboard = () => {
@@ -30,13 +22,13 @@ const Dashboard = () => {
                 className="imgBox"
                 style={{ backgroundColor: token?.colorFill }}
               >
-                <FaSortAmountUp />
+                <FiTrendingUp />
               </div>
               <Typography.Title
                 level={4}
                 style={{ marginTop: 10, marginBottom: 0 }}
               >
-                Income <FaLevelUpAlt size={12} color="green" />
+                Income <FiTrendingUp size={12} color="green" />
               </Typography.Title>
               <Typography.Text type="secondary">Aug 2, 2013</Typography.Text>
               <Typography.Title level={2}>$ 12,000</Typography.Title>
@@ -53,13 +45,13 @@ const Dashboard = () => {
                 className="imgBox"
                 style={{ backgroundColor: token?.colorFill }}
               >
-                <FaSortAmountDown />
+                <FiTrendingDown />
               </div>
               <Typography.Title
                 level={4}
                 style={{ marginTop: 10, marginBottom: 0 }}
               >
-                Expenses <FaLevelDownAlt size={12} color="red" />
+                Expenses <FiTrendingDown size={12} color="red" />
               </Typography.Title>
               <Typography.Text type="secondary">Aug 2, 2013</Typography.Text>
               <Typography.Title level={2}>$ 1,000</Typography.Title>
@@ -76,7 +68,7 @@ const Dashboard = () => {
                 className="imgBox"
                 style={{ backgroundColor: token?.colorFill }}
               >
-                <FaDollarSign />
+                <FiDollarSign />
               </div>
               <Typography.Title
                 level={4}
@@ -99,7 +91,7 @@ const Dashboard = () => {
                 className="imgBox"
                 style={{ backgroundColor: token?.colorFill }}
               >
-                <FaSignal />
+                <FiBarChart />
               </div>
               <Typography.Title
                 level={4}
@@ -122,7 +114,7 @@ const Dashboard = () => {
                 className="imgBox"
                 style={{ backgroundColor: token?.colorFill }}
               >
-                <FaUserAlt />
+                <FiUser />
               </div>
               <Typography.Title
                 level={4}
@@ -160,7 +152,7 @@ const Dashboard = () => {
                     className="imgBox"
                     style={{ backgroundColor: token?.colorFill }}
                   >
-                    <FaDollarSign />
+                    <FiDollarSign />
                   </div>
                   <div style={{ marginLeft: 20 }}>
                     <Typography.Title
@@ -184,7 +176,7 @@ const Dashboard = () => {
                     className="imgBox"
                     style={{ backgroundColor: token?.colorFill }}
                   >
-                    <FaDollarSign />
+                    <FiDollarSign />
                   </div>
                   <div style={{ marginLeft: 20 }}>
                     <Typography.Title
@@ -208,7 +200,7 @@ const Dashboard = () => {
                     className="imgBox"
                     style={{ backgroundColor: token?.colorFill }}
                   >
-                    <FaDollarSign />
+                    <FiDollarSign />
                   </div>
                   <div style={{ marginLeft: 20 }}>
                     <Typography.Title
